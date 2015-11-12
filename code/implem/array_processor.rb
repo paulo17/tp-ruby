@@ -1,0 +1,3 @@
+class ArrayProcessor
+
+end
