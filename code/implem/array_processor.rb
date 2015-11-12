@@ -1,6 +1,6 @@
 class ArrayProcessor
 
-  attr_accessor(:my_array)
+  attr_accessor :my_array
 
   def initialize(array)
     @my_array = array
