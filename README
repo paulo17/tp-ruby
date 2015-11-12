@@ -1,0 +1,27 @@
+Pour installer Ruby: http://marcgg.com/classes/hetic/
+
+Pour installer l'environnement (bundler, rspec):
+
+$ cd /path/to/tp1/
+$ gem install bundler
+$ bundle install
+
+/!\ Exécutez toutes les commandes depuis /tp1 et non depuis /code. /!\
+
+Pour tester si le setup s'est bien déroulé:
+
+$ bundle exec rspec code/test_setup_spec.rb
+
+Ensuite le but est de faire marcher les tests contenus dans code/exercices_tp1_spec.rb
+Vous avez entièrement fini le TP quand vous verrez ceci: http://cl.ly/image/2f080D2V0x3M
+
+Pour lancer les tests, faites:
+
+$ bundle exec rspec code/exercices_tp1_spec.rb --format=documentation --color
+
+Evidemment la première fois que vous les lancerez, ils échoueront tous.
+
+Créez les fichiers d'implémentation dans tp1/code/implem/
+Ne modifiez aucun fichier autre que ce qui est contenu dans ce dossier, car sinon
+il est possible que vos tests ne marcheront pas sur la machine utilisée pour la
+correction !
