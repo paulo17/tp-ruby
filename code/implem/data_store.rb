@@ -18,9 +18,9 @@ class DataStore
   def save(model:, attributes:)
     pattern = @available_models.detect { |pattern| pattern[:name] == model }.dup
 
-    attributes.each do |attribute, value|
+    attributes.each_key do |attribute|
       unless pattern[:attributes].include? attribute
-        @error_field = attribute.to_s
+        return @error_field = attribute.to_s
       end
     end
 
