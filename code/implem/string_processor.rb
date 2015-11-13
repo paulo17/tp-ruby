@@ -1,11 +1,7 @@
 class StringProcessor
 
   def self.count(string, occurrence = nil)
-    if occurrence.nil?
-      string.size
-    else
-      string.downcase.count(occurrence.downcase)
-    end
+    occurrence.nil? ? string.size : string.downcase.count(occurrence.downcase)
   end
 
   def self.concat(string1, string2)
