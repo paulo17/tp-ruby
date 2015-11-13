@@ -1,0 +1,3 @@
+class Mouse < Animal
+
+end
