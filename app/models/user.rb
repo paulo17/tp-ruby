@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
     raise ArgumentError if format.equal? :xml
   end
 
+  def commented_posts
+    commented_posts = []
+    self.comments.each do |comment|
+      commented_posts << comment.post unless commented_posts.include? comment.post
+    end
+    return commented_posts
+  end
+
 end
