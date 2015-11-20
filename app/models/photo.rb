@@ -3,9 +3,10 @@ class Photo < ActiveRecord::Base
   belongs_to :user
 
   validates :url, presence: true
+  validate :validate_format
 
   def file
-      self.url.rpartition('/').last
+    valid_extension? ? url.split('/').last : nil
   end
 
   def extension
@@ -13,23 +14,19 @@ class Photo < ActiveRecord::Base
   end
 
   def file_format
-    if valid_extension?
-      return extension
-    else
-      return nil
-    end
+    valid_extension? ? url.split('.').last : nil
   end
 
   def self.all_urls
-    all_urls = []
-    Photo.all.each do |photo|
-      all_urls << photo.url
-    end
-    return all_urls
+    Photo.pluck(:url)
+  end
+
+  def validate_format
+    errors.add(:url, 'Format error') unless valid_extension?
   end
 
   private
   def valid_extension?
-    %w( jpg jpeg gif png pdf mp4 docx doc ).include? extension.downcase
+    %w( jpg jpeg gif png pdf mp4 docx doc ).include? url.split('.').last
   end
 end
