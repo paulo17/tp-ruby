@@ -1,0 +1,9 @@
+<% if @times.is_a? Integer %>
+
+  <% @times.times do |i| %>
+    <div><%= i %></div>
+  <% end %>
+
+<% else %>
+  No valid param
+<% end %>

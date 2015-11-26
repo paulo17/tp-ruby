@@ -1,0 +1,48 @@
+# Setup
+
+Vous rendre dans le répertoire ou se trouve ce README en console.
+
+Lancez:
+
+$ gem install bundler
+$ bundle install
+
+Pour vérifier si l'installation s'est bien déroulée, lancez:
+
+$ bundle exec rails -v
+
+... qui devrait vous donner: "Rails 4.2.5"
+
+Ensuite créez votre base de donnée SQLite en faisant:
+
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rake db:migrate RAILS_ENV=test
+
+# Les Tests
+
+Cette fois ci nous allons lancer des tests sur les controlleurs.
+Les fichiers sont localisés dans /spec/controllers/
+
+Pour les lancer, faites:
+
+$ bundle exec rspec spec/controllers
+
+# Les Migrations
+
+Utilisez des migrations pour créer et modifier votre base de données.
+
+Attention, vous ne pouvez pas modifier une migration une fois qu'elle est passée.
+
+Dans ce cas vous pouvez soit créer une migration de plus pour corriger votre erreur,
+soit détruire et recréer la base de données dans tous les environnements:
+
+$ bundle exec rake db:drop
+$ bundle exec rake db:drop RAILS_ENV=test
+
+$ bundle exec rake db:create
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:migrate RAILS_ENV=test
+
+
