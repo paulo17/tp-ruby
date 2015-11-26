@@ -12,7 +12,7 @@ gem 'database_cleaner'
 
 group :development do
   gem 'quiet_assets'
-  gem 'spring'
-  gem 'puma'
+  # gem 'spring'
+  # gem 'puma'
 end
 

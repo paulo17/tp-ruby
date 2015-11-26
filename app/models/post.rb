@@ -9,8 +9,8 @@ class Post < ActiveRecord::Base
   scope :published, -> { where(published: true) }
 
   def length
-    return nil if self.message == ''
-    self.message.size
+    return nil if message.blank?
+    message.size
   end
 
   def unpublish!

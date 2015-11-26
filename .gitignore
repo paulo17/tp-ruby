@@ -14,4 +14,20 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.idea/*
+.idea
+
+.idea/BOISEAU_LEGOUY.iml
+
+.idea/BOISEAU_LEGOUY.iml
+
+.idea/runConfigurations/Development__BOISEAU_LEGOUY.xml
+
+.idea/runConfigurations/Production__BOISEAU_LEGOUY.xml
+
+.idea/runConfigurations/spec__BOISEAU_LEGOUY.xml
+
+.idea/runConfigurations/test__BOISEAU_LEGOUY.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
