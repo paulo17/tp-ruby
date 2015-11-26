@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: :about
   get 'random', to: 'pages#random', as: :random
 
+  resources :posts
+
 end

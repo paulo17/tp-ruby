@@ -1,0 +1,13 @@
+<%= flash[:notice] unless flash[:notice].blank? %>
+
+<% if @users.count > 0 %>
+  Create a new post!
+
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+
+<% else %>
+  No users present
+<% end %>
+
