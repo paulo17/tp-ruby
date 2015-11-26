@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  validates :name, :email, presence: true
-  validates :email, format: { with: /\w*@\w*\.\w*/ }, uniqueness: true
+  validates :name, presence: { message: "Name can't be blank" }
+  validates :email, format: { with: /\w*@\w*\.\w*/, message: 'Email is invalid' }, uniqueness: true, presence: true
 
   has_many :posts
   has_many :comments

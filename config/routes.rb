@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :users, only: [:index, :create]
+  get 'users/export', to: 'users#export', as: :export
+
 end
