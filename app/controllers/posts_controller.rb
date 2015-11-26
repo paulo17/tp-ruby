@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :find_post, only: [:show, :edit, :update]
+
   # GET /posts
   def index
     @posts = Post.all
@@ -7,11 +9,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    begin
-      @post = Post.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      head 404
-    end
   end
 
   # GET /posts/new
@@ -46,8 +43,18 @@ class PostsController < ApplicationController
     end
   end
 
+  private
   def post_params
     params[:post].permit(:user_id, :message)
+  end
+
+  private
+  def find_post
+    begin
+      @post = Post.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      return head 404
+    end
   end
 
 end
